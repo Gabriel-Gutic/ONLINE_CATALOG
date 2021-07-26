@@ -1,0 +1,36 @@
+{% extends "CATALOG/base.html"%} 
+{% block title %} Register New School {% endblock title %} 
+
+{% block content %} {% load static %}
+<link href="{% static '/CSS/register.css' %}" rel="stylesheet">
+
+<div class="container">
+    <br>
+    <h1>New School</h1>
+
+    <form id="register-form" class="form-inline" action="#" method="post">
+        <br> {% csrf_token %} 
+        {% for field in form %} 
+            {{ field.errors }}
+            <div class="mb-3 row">
+                {{field.label_tag}}
+                <div class="col-sm-13">
+                    {% if field.id_for_label != "region-select" and field.id_for_label != "city-select"%} 
+                        {{field}} 
+                    {% else %}
+                        <select name="{{field.name}}" id="{{field.id_for_label}}" class="form-control" required="required">
+                            <option disabled selected value> -- select an option -- </option>
+                        </select> 
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor%}
+        <input id="add-new-school-submit" name="add-new-school-submit" class="submit-data" type="submit" value="Submit">
+    </form>
+</div>
+<br>
+<br> {% endblock content %} 
+
+{% block scripts %}
+<script src="{% static '/JS/new-school.js' %}"></script>
+{% endblock scripts %}

@@ -1,0 +1,29 @@
+{% extends "CATALOG/base.html" %} {% block title %} Login {% endblock title %} {% block content %} {% load static %}
+<link href="{% static '/CSS/login.css' %}" rel="stylesheet">
+
+<br>
+
+<main class="form-signin">
+    <form method="post">
+        <h1 class="h3 mb-3 fw-normal">Log In</h1>
+
+        {% csrf_token %} {% for field in form %}
+        <div class="mb-3 row">
+            {% if field.field.widget.input_type == 'checkbox' %}
+
+            <div class="col-sm-20">
+                {{field.label_tag}} {{field}}
+            </div>
+
+            {% else %} {{field.label_tag}}
+            <div class="col-sm-10">
+                {{field}}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <button id="login-btn" class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+    </form>
+</main>
+
+{% endblock content %}

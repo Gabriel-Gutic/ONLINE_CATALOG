@@ -1,0 +1,23 @@
+#remember-me {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.col-sm-10,
+#id_password,
+#id_username {
+    width: 100%;
+    max-width: 400px;
+}

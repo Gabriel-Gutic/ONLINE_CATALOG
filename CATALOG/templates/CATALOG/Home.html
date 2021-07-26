@@ -1,0 +1,5 @@
+{% extends "CATALOG/base.html" %} {% block title %} Home {% endblock title %} {% block content %}
+<br> {% if user.is_authenticated %}
+<h2>Welcome {{user.user_name}}</h2>
+
+{%endif %} {% endblock content %}

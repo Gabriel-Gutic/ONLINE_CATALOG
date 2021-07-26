@@ -1,0 +1,31 @@
+{% extends "CATALOG/Users/Profile/Profile.html" %} {% block profile-card %}
+<p class="text-secondary mb-1"></p>
+SCHOOL ADMINISTRATOR
+</p>
+<p class="text-muted font-size-sm">{{school.NAME}}</p>
+{% endblock profile-card %} {% block attrs-card %}
+<div class="row mb-3">
+    <div class="col-sm-3">
+        <h6 class="mb-0">County</h6>
+    </div>
+    <div class="col-sm-9 text-secondary">
+        {{school.COUNTY}}
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-sm-3">
+        <h6 class="mb-0">City</h6>
+    </div>
+    <div class="col-sm-9 text-secondary">
+        {{school.CITY}}
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-sm-3">
+        <h6 class="mb-0">Address</h6>
+    </div>
+    <div class="col-sm-9 text-secondary">
+        {{school.ADDRESS}}
+    </div>
+</div>
+{% endblock attrs-card %}

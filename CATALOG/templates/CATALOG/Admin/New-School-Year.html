@@ -1,0 +1,34 @@
+{% extends "CATALOG/base.html"%} 
+{% block title %} Start New School Year {% endblock title %} 
+
+{% block content %} {% load static %}
+<link href="{% static '/CSS/register.css' %}" rel="stylesheet">
+
+<div class="container">
+    <br>
+    <h1>New School Year</h1>
+
+    <form id="register-form" class="form-inline" action="#" method="post">
+        <br> {% csrf_token %} 
+        {% for field in form %} 
+            {{ field.errors }}
+            <div class="mb-3 row">
+                {{field.label_tag}}
+                <div class="col-sm-13">
+                {{field}}
+                </div>
+            </div>
+        {% endfor%}
+        <input id="new-school-year-submit" name="new-school-year-submit" class="submit-data" type="submit" value="Submit">
+    </form>
+</div>
+<br>
+<br> 
+{% endblock content %} 
+
+{% block scripts %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{% static '/JS/datepicker.js' %}"></script>
+{% endblock scripts %}

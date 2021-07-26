@@ -1,0 +1,11 @@
+.container {
+    max-width: 960px;
+}
+
+.school-name-search {
+    width: 100%;
+}
+
+.item-name {
+    cursor: pointer;
+}

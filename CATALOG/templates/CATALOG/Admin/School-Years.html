@@ -1,0 +1,12 @@
+{% extends "CATALOG/list-of-items.html"%} 
+{% block title %} School Years {% endblock title %} 
+
+{% block add_new_item_button %}
+    <button class="btn btn-outline-secondary" type="button" id="button-add-new-school-year" onclick="GoTo('/CATALOG/admin/new-school-year/')">New School-Year</button> 
+{% endblock add_new_item_button %} 
+
+{% block list_of_items %} 
+    {% for x in school_years %}
+        <li class="list-group-item item-name">{{x}}</li>
+    {% endfor %} 
+{% endblock list_of_items %}

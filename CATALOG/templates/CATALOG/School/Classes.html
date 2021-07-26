@@ -1,0 +1,14 @@
+{% extends "CATALOG/list-of-items.html" %} 
+{% block title %} Classes {% endblock title %} 
+{% block add_new_item_button %}
+    <button class="btn btn-outline-secondary" type="button" id="button-add-new-class" onclick="GoTo('/CATALOG/school/new-class/')">Add New Class</button> 
+{% endblock add_new_item_button %} 
+
+{% block add_existing_item_button %}
+{% endblock add_existing_item_button %} 
+
+{% block list_of_items %} 
+    {% for x in classes %}
+        <li class="list-group-item item-name" onclick="GoTo('{{x.id}}/')">{{x.number}} {{x.type}}</li>
+    {% endfor %} 
+{% endblock list_of_items %}

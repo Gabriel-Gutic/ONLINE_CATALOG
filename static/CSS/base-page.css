@@ -1,0 +1,41 @@
+#user-name-item {
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    display: table;
+}
+
+#user-name {
+    vertical-align: middle;
+    display: table-cell;
+    font-weight: bold;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+#profile-picture {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+#navbar-icon {
+    width: 23px;
+    height: 23px;
+}

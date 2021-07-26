@@ -1,0 +1,17 @@
+{% extends "CATALOG/list-of-items.html"%} 
+{% block title %} School Years {% endblock title %} 
+{% block add_new_item_button %}
+    <button class="btn btn-outline-secondary" type="button" id="button-add-new-teacher" onclick="GoTo('/CATALOG/school/new-teacher/')">Add New Teacher</button> 
+{% endblock add_new_item_button %} 
+
+{% block add_existing_item_button %}
+<div class="col-auto">
+    <button class="btn btn-outline-secondary" type="button" id="button-add-existing-teacher" onclick="GoTo('/CATALOG/school/existing-teacher/')">Add Existing Teacher</button> 
+</div>
+{% endblock add_existing_item_button %}
+
+{% block list_of_items %} 
+    {% for x in teachers %}
+        <li class="list-group-item item-name">{{x.last_name}} {{x.first_name}}</li>
+    {% endfor %} 
+{% endblock list_of_items %}

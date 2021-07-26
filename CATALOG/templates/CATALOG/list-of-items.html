@@ -1,0 +1,42 @@
+{% extends "CATALOG/base.html"%} 
+
+{% block title %} Items {% endblock title %} 
+
+{% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'CSS/list-of-items.css' %}">
+
+<div class="container">
+    <form class="form-inline" action="#" method="post">
+        <br>
+        <br>
+        <div class="row align-items-center">
+            <div class="col-sm">
+                {% csrf_token %}{{form}}
+            </div>
+            <div class="col-auto">
+                <input name="search-submit" class="btn btn-outline-secondary" type="submit" id="button-search" value="Search">
+            </div>
+            <div class="col-auto">
+                {% block add_new_item_button %}
+                    <button class="btn btn-outline-secondary" type="button" id="button-add-new-item" onclick="GoTo('#')">Add New Item</button> 
+                {% endblock add_new_item_button %}
+            </div>
+            {% block add_existing_item_button %}
+            <div class="col-auto">
+                    <button class="btn btn-outline-secondary" type="button" id="button-add-existing-item" onclick="GoTo('#')">Add Existing Item</button> 
+            </div>
+            {% endblock add_existing_item_button %}
+        </div>
+    </form>
+    <br>
+    <ul class="list-group">
+        {% block list_of_items %} {% endblock list_of_items %}
+    </ul>
+</div>
+
+{% endblock content %} 
+
+{% block scripts %}
+<script src="{% static 'JS/list-of-items.js' %}"></script>
+{% endblock scripts %}
